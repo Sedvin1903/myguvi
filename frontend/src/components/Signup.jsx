@@ -59,7 +59,7 @@ const Signup = () => {
         try{
 
             await axios.post("https://myguvi-backend.onrender.com/api/user/signup",inputs);
-  /*
+  /*            
 =======
             await axios.post("https://tubular-cheesecake-ac28b9.netlify.app/signup",{
                 name,email,password,cpass
@@ -74,6 +74,7 @@ const Signup = () => {
                    
                      alert('User Successfully Registered');
                    }*/
+                   alert('User Successfully Registered')
                     history('/login');
         }
         catch(err){

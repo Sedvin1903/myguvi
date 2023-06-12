@@ -46,6 +46,7 @@ const validateEmail = () => {
         try{
               
               await login(input)
+              alert('Logged In !!')
               history('/home')
               
           }
