@@ -11,17 +11,17 @@ function App() {
 
   
 const router = createBrowserRouter([
-  {
-    path: "/",
-    element: <Layout />,
-    children: [
-      { path: "/", element: <Landing /> },
-      { path: "/signup", element: <Signup/> },
-      { path: "/login", element: <Login/> },
-      { path: "/home", element: <Home /> },
-      { path: "/*", element: <NotFound /> },
-    ],
-  },
+  // {
+  //   path: "/",
+  //   element: <Layout />,
+  //   children: [
+  //     { path: "/", element: <Landing /> },
+  //     { path: "/signup", element: <Signup/> },
+  //     { path: "/login", element: <Login/> },
+  //     { path: "/home", element: <Home /> },
+  //     { path: "/*", element: <NotFound /> },
+  //   ],
+  // },
   {
     path: "/", 
     element: <Landing />, 
