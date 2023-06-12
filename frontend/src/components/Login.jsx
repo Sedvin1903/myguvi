@@ -96,7 +96,7 @@ const validateEmail = () => {
             <br />
 <script>  
 </script>
-            <Link to="/signup">New User? Create Accout</Link>
+            <Link to="/signup">New User? Create Account</Link>
 </center>
         </div>
 

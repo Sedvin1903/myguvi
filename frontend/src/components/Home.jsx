@@ -1,13 +1,15 @@
 import React , { useContext} from "react"
-import {useLocation,useNavigate} from 'react-router-dom'
+import {useNavigate} from 'react-router-dom'
 import  './style.css';
 import { AuthContext } from "../auth/Authcontext";
 
-function Home (){
-    const location = useLocation()
+const Home = () => {
+    
+    const { currentUser } = useContext(AuthContext);
     const history = useNavigate()
-    const email = location.state.id
-    const username = email.substring(0, email.indexOf('@'));
+    const email = currentUser.collections.email;
+    //const username = email.substring(0, email.indexOf('@'));
+    const username = currentUser.collections.email;
     const getAge = () => {
         return Math.floor(Math.random() * 80) + 1; // Generates a random age between 1 and 80
       };
@@ -60,7 +62,7 @@ function Home (){
             <button onClick={handleLogout} class="btn btn-primary">Logout</button>
         </div>
     )
-}
+};
 
 
 
