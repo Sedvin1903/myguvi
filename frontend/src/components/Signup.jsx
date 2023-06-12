@@ -101,6 +101,7 @@ const Signup = () => {
               type="text"
               className="form-group row"
               placeholder="First name"
+              name = "name"
               onChange={handleChange}
             />
             </div>
@@ -112,6 +113,7 @@ const Signup = () => {
               type="email"
               className="form-group row"
               placeholder="Email"
+              name = "email"
               onChange={handleChange}
             /></div>
           <div className="mb-3">
@@ -120,6 +122,7 @@ const Signup = () => {
                     required
                     type="password"
                     className="form-group row"
+                    name = "password"
                     placeholder="Password"
                     onChange={handleChange}
                     />
@@ -130,6 +133,7 @@ const Signup = () => {
                     required
                     type="password"
                     className="form-group row"
+                    name = "cpass"
                     placeholder="Confirm Password"
                     onChange={handleChange}
                     />     </div>
