@@ -73,6 +73,7 @@ const validateEmail = () => {
               type="email"
               className="form-group row"
               placeholder="Email"
+              name="email"
               onChange={handleChange}
             /> </div>
           <div className="mb-3">
@@ -81,6 +82,7 @@ const validateEmail = () => {
                     type="password"
                     className="form-group row"
                     placeholder="Password"
+                    name="password"
                     onChange={handleChange}
                     />
             </div>
