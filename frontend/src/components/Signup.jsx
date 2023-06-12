@@ -1,11 +1,12 @@
-import React, { useState } from "react"
-import axios from "axios"
-import { useNavigate } from "react-router-dom"
+import React from 'react';
+import { useState } from "react";
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
 import  './style.css';
 
 
 const Signup = () => {
-    const history=useNavigate();
+   
     const [inputs, setInputs] = useState({
       name: "",
       email: "",
@@ -13,6 +14,8 @@ const Signup = () => {
       cpass: "",
     });
     const [err, setError] = useState(null);
+    const history = useNavigate();
+
     const handleChange = (e) => {
       setInputs((prev) => ({ ...prev, [e.target.name]: e.target.value }));
     };
@@ -50,7 +53,7 @@ const Signup = () => {
         }
       };
 */
-    async function hsubmit(e){
+    const handleSubmit = async (e) => {
         e.preventDefault();
 
         try{
@@ -79,7 +82,7 @@ const Signup = () => {
 
         }
 
-    }
+    };
 
 
     return (
