@@ -5,11 +5,11 @@ import { AuthContext } from "../auth/Authcontext";
 
 const Home = () => {
     
-    const { currentUser } = useContext(AuthContext);
+    const {currentUser} = useContext(AuthContext);
     const history = useNavigate()
-    const email = currentUser.collections.email;
+    const email = currentUser.User.email;
     //const username = email.substring(0, email.indexOf('@'));
-    const username = currentUser.collections.email;
+    const username = currentUser.User.name;
     const getAge = () => {
         return Math.floor(Math.random() * 80) + 1; // Generates a random age between 1 and 80
       };

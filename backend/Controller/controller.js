@@ -112,7 +112,7 @@ const loginUser = async function (req, res) {
       {
         httpOnly: true,
       }).status(200).json({User, token}); */
-      return res.status(200).send({ data : getUser });
+      return res.status(200).send(getUser._id.toString());
     } catch (error) {
       return res.status(500).json(error.message);
     }
