@@ -3,7 +3,7 @@ import { useNavigate, Link } from "react-router-dom"
 import  './style.css';
 import { AuthContext } from "../auth/Authcontext";
 
-function Login() {
+const Login = () => {
 
     const history=useNavigate();
     const {login} = useContext(AuthContext);
@@ -40,14 +40,14 @@ const validateEmail = () => {
   setInputValid(email.trim().length > 0 && password.trim().length > 0);
   };
 
-    async function hsubmit(e){
+  const hsubmit = async (e) => {
         e.preventDefault();
 
         try{
               
               await login(input)
               alert('Logged In !!')
-              history('/home')
+              history('/user/home')
               
           }
       catch(err)
@@ -57,7 +57,7 @@ const validateEmail = () => {
                 setError(err.response.data);
             }
 
-        }
+        };
 
   
     return (
@@ -67,7 +67,7 @@ const validateEmail = () => {
             <br />
             <h1>Login</h1>
             <br /><br />
-            <form action="POST" onSubmit={(e) => e.preventDefault()}>
+            <form >
             <div className="mb-3">
             <label>Email</label>
             <input required
@@ -101,6 +101,6 @@ const validateEmail = () => {
         </div>
 
     )
-}
+};
 
-export default Login
+export default Login;
