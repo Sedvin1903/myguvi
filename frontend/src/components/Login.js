@@ -8,12 +8,20 @@ function Login() {
     const history=useNavigate();
     const {login} = useContext(AuthContext);
 
-    const [input, setInputs] = useState({
-      email: "",
-      password: "",
-    });
-    const [isInputValid, setInputValid] = useState(false);
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+    const [isInputValid, setIsInputValid] = useState(false);
     const [err, setError] = useState(null);
+
+    const handleEmailChange = (event) => {
+      setEmail(event.target.value);
+      setIsInputValid(event.target.value.trim().length > 0 && password.trim().length > 0);
+    };
+  
+    const handlePasswordChange = (event) => {
+      setPassword(event.target.value);
+      setIsInputValid(email.trim().length > 0 && event.target.value.trim().length > 0);
+    };
    
 /*
 
@@ -33,13 +41,6 @@ const validateEmail = () => {
       setPasswordError('');
     }
   }; */
-  const handleChange = (e) => {
-  setInputs((prev) => ({ ...prev, [e.target.name]: e.target.value }));
-  
-  const { email, password } = input;
-  setInputValid(email.trim().length > 0 && password.trim().length > 0);
-  };
-
     async function submit(e){
         e.preventDefault();
 
@@ -74,7 +75,7 @@ const validateEmail = () => {
               className="form-group row"
               placeholder="Email"
               value={email}
-              onChange={handleChange}
+              onChange={handleEmailChange}
             /> </div>
           <div className="mb-3">
                     <label>Password</label>
@@ -83,7 +84,7 @@ const validateEmail = () => {
                     className="form-group row"
                     placeholder="Password"
                     value={password}
-                    onChange={handleChange}
+                    onChange={handlePasswordChange}
                     />
             </div>
           <br />
