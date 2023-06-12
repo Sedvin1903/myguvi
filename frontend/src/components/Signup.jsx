@@ -53,7 +53,7 @@ const Signup = () => {
         }
       };
 */
-    const handleSubmit = async (e) => {
+    const hsubmit = async (e) => {
         e.preventDefault();
 
         try{
