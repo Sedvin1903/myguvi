@@ -10,7 +10,7 @@ function Signup() {
       name: "",
       email: "",
       password: "",
-      cpass: ""
+      cpass: "",
     });
     const [err, setError] = useState(null);
     const handleChange = (e) => {
@@ -50,7 +50,7 @@ function Signup() {
         }
       };
 */
-    async function submit(e){
+    async function hsubmit(e){
         e.preventDefault();
 
         try{
@@ -132,7 +132,7 @@ function Signup() {
                     />     </div>
 
           <br /><br />
-                <input type="submit"class="btn btn-primary" onClick={submit} />
+                <input type="submit"class="btn btn-primary" onClick={hsubmit} />
                 {err && <p>{err}</p>}
             </form>
             </center>
@@ -142,4 +142,4 @@ function Signup() {
     )
 }
 
-export default Signup
+export default Signup;
