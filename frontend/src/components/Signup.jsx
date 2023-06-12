@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom"
 import  './style.css';
 
 
-function Signup() {
+const Signup = () => {
     const history=useNavigate();
     const [inputs, setInputs] = useState({
       name: "",
@@ -139,7 +139,7 @@ function Signup() {
             
 
         </div>
-    )
-}
+    );
+};
 
 export default Signup;
