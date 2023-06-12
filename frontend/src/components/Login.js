@@ -66,7 +66,7 @@ const validateEmail = () => {
             <br />
             <h1>Login</h1>
             <br /><br />
-            <form action="POST" onSubmit={(e) => e.preventDefault()}>
+            <form>
             <div className="mb-3">
             <label>Email</label>
             <input required

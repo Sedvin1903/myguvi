@@ -1,6 +1,6 @@
 const mongoose= require("mongoose")
 
-const uri ="mongodb+srv://<username>:votechain%402023@<cluster-name>.frbqx.mongodb.net/react-login-tut?retryWrites=true&w=majority";
+//const uri ="mongodb+srv://<username>:votechain%402023@<cluster-name>.frbqx.mongodb.net/react-login-tut?retryWrites=true&w=majority";
 // mongoose.connect(uri)
 // .then(()=>{
 //     console.log("mongodb connected");
