@@ -47,7 +47,7 @@ const validateEmail = () => {
               
               await login(input)
               alert('Logged In !!')
-              history('/user/home')
+              history('/home')
               
           }
       catch(err)
