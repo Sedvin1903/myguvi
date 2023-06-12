@@ -22,7 +22,6 @@ function Login() {
       setPassword(event.target.value);
       setIsInputValid(email.trim().length > 0 && event.target.value.trim().length > 0);
     };
-   
 /*
 
 const validateEmail = () => {
@@ -46,7 +45,7 @@ const validateEmail = () => {
 
         try{
               
-              await login(input)
+              await login({email,password})
               history('/home')
               
           }
