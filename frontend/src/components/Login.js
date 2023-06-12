@@ -8,20 +8,13 @@ function Login() {
     const history=useNavigate();
     const {login} = useContext(AuthContext);
 
-    const [email, setEmail] = useState('');
-    const [password, setPassword] = useState('');
-    const [isInputValid, setIsInputValid] = useState(false);
+    const [input, setInputs] = useState({
+      email: "",
+      password: "",
+    });
+    const [isInputValid, setInputValid] = useState(false);
     const [err, setError] = useState(null);
-
-    const handleEmailChange = (event) => {
-      setEmail(event.target.value);
-      setIsInputValid(event.target.value.trim().length > 0 && password.trim().length > 0);
-    };
-  
-    const handlePasswordChange = (event) => {
-      setPassword(event.target.value);
-      setIsInputValid(email.trim().length > 0 && event.target.value.trim().length > 0);
-    };
+   
 /*
 
 const validateEmail = () => {
@@ -40,12 +33,19 @@ const validateEmail = () => {
       setPasswordError('');
     }
   }; */
-    async function submit(e){
+  const handleChange = (e) => {
+  setInputs((prev) => ({ ...prev, [e.target.name]: e.target.value }));
+  
+  const { email, password } = input;
+  setInputValid(email.trim().length > 0 && password.trim().length > 0);
+  };
+
+    async function hsubmit(e){
         e.preventDefault();
 
         try{
               
-              await login({email,password})
+              await login(input)
               history('/home')
               
           }
@@ -66,15 +66,14 @@ const validateEmail = () => {
             <br />
             <h1>Login</h1>
             <br /><br />
-            <form>
+            <form action="POST" onSubmit={(e) => e.preventDefault()}>
             <div className="mb-3">
             <label>Email</label>
             <input required
               type="email"
               className="form-group row"
               placeholder="Email"
-              value={email}
-              onChange={handleEmailChange}
+              onChange={handleChange}
             /> </div>
           <div className="mb-3">
                     <label>Password</label>
@@ -82,12 +81,11 @@ const validateEmail = () => {
                     type="password"
                     className="form-group row"
                     placeholder="Password"
-                    value={password}
-                    onChange={handlePasswordChange}
+                    onChange={handleChange}
                     />
             </div>
           <br />
-          <input type="submit"class="btn btn-primary" onClick={submit} disabled={!isInputValid} />
+          <input type="submit"class="btn btn-primary" onClick={hsubmit} disabled={isInputValid} />
           {err && <p>{err}</p>}
             </form>
             <br />
