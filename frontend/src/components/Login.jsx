@@ -88,7 +88,7 @@ const validateEmail = () => {
                     />
             </div>
           <br />
-          <input type="submit"class="btn btn-primary" onClick={hsubmit} disabled={isInputValid} />
+          <input type="submit"class="btn btn-primary" onClick={hsubmit} disabled={!isInputValid} />
           {err && <p>{err}</p>}
             </form>
             <br />
