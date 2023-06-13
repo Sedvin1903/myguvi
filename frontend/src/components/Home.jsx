@@ -1,15 +1,21 @@
 import React , { useContext} from "react"
-import {useNavigate} from 'react-router-dom'
+import {useNavigate , useLocation} from 'react-router-dom'
 import  './style.css';
 import { AuthContext } from "../auth/Authcontext";
 
-const Home = () => {
+const Home = ({ currentUser }) => {
     
-    const {currentUser} = useContext(AuthContext);
+    const {name ,email} = currentUser;
     const history = useNavigate()
-    const email = currentUser.User.email;
+  
+    // const location = useLocation();
+    // const searchParams = new URLSearchParams(location.search);
+    // const userId = searchParams.get('userId');
+
+
+    const emaill = currentUser.email;
     //const username = email.substring(0, email.indexOf('@'));
-    const username = currentUser.User.name;
+    const username = currentUser.name;
     const getAge = () => {
         return Math.floor(Math.random() * 80) + 1; // Generates a random age between 1 and 80
       };
@@ -27,6 +33,7 @@ const Home = () => {
         const formattedNumber = `${randomNumber.substring(0, 3)}-${randomNumber.substring(3, 6)}-${randomNumber.substring(6)}`;
         return formattedNumber;
       };
+
 
       const {logout} = useContext(AuthContext);
 
@@ -51,7 +58,7 @@ const Home = () => {
                Name: {username}
             </div>
             <ul class="list-group list-group-flush">
-                <li class="list-group-item">Email : &nbsp; {email}</li>
+                <li class="list-group-item">Email : &nbsp; {emaill}</li>
                 <li class="list-group-item">Age : &nbsp; {age} </li>
                 <li class="list-group-item">DOB : &nbsp; {dob}</li>
                 <li class="list-group-item">Mobile : &nbsp; {mobileNumber}</li>

@@ -8,7 +8,7 @@ const userController = require("../Controller/controller");
 
 router.post("/api/user/signup", userController.register);
 router.post("/api/user/login", userController.loginUser);
-//router.post("/api/user/home", userController.loginUser);
+//router.post("/api/user/home", userController.homer);
 router.post("/api/user/logout", userController.logout);
 // router.put("/api/user/:id", userController.updateUser);
 // router.delete("/api/user/:id", userController.deleteUser);
