@@ -5,12 +5,14 @@
 /mybackend/node_modules
 /.pnp
 .pnp.js
-
+comments
 # testing
 /coverage
 
 # production
 /build
+
+comments.txt
 
 # misc
 .DS_Store

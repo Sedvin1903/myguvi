@@ -19,61 +19,13 @@ const Signup = () => {
     const handleChange = (e) => {
       setInputs((prev) => ({ ...prev, [e.target.name]: e.target.value }));
     };
-/*
-    const validateName = () => {
-        if (name.trim() === '') {
-          setNameError('Name is required');
-        } else {
-          setNameError('');
-        }
-      };
-      
-      const validateEmail = () => {
-        const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        if (!emailPattern.test(email)) {
-          setEmailError('Invalid email address');
-        } else {
-          setEmailError('');
-        }
-      };
-      
-      const validatePassword = () => {
-        if (password.length < 4) {
-          setPasswordError('Password must be at least 4 characters long');
-        } else {
-          setPasswordError('');
-        }
-      };
-      
-      const validateConfirmPassword = () => {
-        if (cpass !== password) {
-          setConfirmPasswordError('Confirm password should match the password');
-        } else {
-          setConfirmPasswordError('');
-        }
-      };
-*/
+
     const hsubmit = async (e) => {
         e.preventDefault();
 
         try{
 
             await axios.post("https://myguvi-backend.onrender.com/api/user/signup",inputs);
-  /*            
-=======
-            await axios.post("https://tubular-cheesecake-ac28b9.netlify.app/signup",{
-                name,email,password,cpass
-                
-            })
-            .then(res=>{
->>>>>>> b33d022638d3151e7b48b84d8e400a8706e3a5a0:src/components/Signup.js
-                if(res.data==="exist"){
-                    alert("User already exists")
-                }
-                else if(res.data==="notexist"){
-                   
-                     alert('User Successfully Registered');
-                   }*/
                    alert('User Successfully Registered')
                     history('/login');
         }

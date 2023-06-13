@@ -5,12 +5,9 @@ import { AuthContext } from "../auth/Authcontext";
 
 const Home = () => {
     
-    //const {name ,email} = currentUser;
+   
     const history = useNavigate()
   
-    // const location = useLocation();
-    // const searchParams = new URLSearchParams(location.search);
-    // const userId = searchParams.get('userId');
     const { currentUser , logout } = useContext(AuthContext);
 
     const emaill = currentUser?.data?.email;
@@ -47,8 +44,8 @@ const Home = () => {
 
     return (
         <div className="homepage">
-<br /><br />
-&nbsp;&nbsp;&nbsp;&nbsp;<h1>Hello {username} !!</h1>
+        <br /><br />
+        &nbsp;&nbsp;&nbsp;&nbsp;<h1>Hello {username} !!</h1>
              <center>
              <h2> Profile </h2>
              <div class="card" style={{ width: '18rem' }}>
