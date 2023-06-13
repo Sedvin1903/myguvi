@@ -3,7 +3,7 @@ import {useNavigate } from 'react-router-dom'
 import  './style.css';
 import { AuthContext } from "../auth/Authcontext";
 
-const Home = ({ currentUser }) => {
+const Home = ({ }) => {
     
     //const {name ,email} = currentUser;
     const history = useNavigate()
@@ -11,7 +11,7 @@ const Home = ({ currentUser }) => {
     // const location = useLocation();
     // const searchParams = new URLSearchParams(location.search);
     // const userId = searchParams.get('userId');
-
+    const { currentUser , logout } = useContext(AuthContext);
 
     const emaill = currentUser.email;
     //const username = email.substring(0, email.indexOf('@'));
@@ -33,9 +33,6 @@ const Home = ({ currentUser }) => {
         const formattedNumber = `${randomNumber.substring(0, 3)}-${randomNumber.substring(3, 6)}-${randomNumber.substring(6)}`;
         return formattedNumber;
       };
-
-
-      const {logout} = useContext(AuthContext);
 
       async function handleLogout() {
        await logout();
