@@ -1,11 +1,11 @@
 import React , { useContext} from "react"
-import {useNavigate , useLocation} from 'react-router-dom'
+import {useNavigate } from 'react-router-dom'
 import  './style.css';
 import { AuthContext } from "../auth/Authcontext";
 
 const Home = ({ currentUser }) => {
     
-    const {name ,email} = currentUser;
+    //const {name ,email} = currentUser;
     const history = useNavigate()
   
     // const location = useLocation();
