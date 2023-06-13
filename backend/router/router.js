@@ -2,8 +2,6 @@ const express = require("express");
 const router = express.Router();
 const userController = require("../Controller/controller");
 
-
-
 //=======================> User <====================
 
 router.post("/api/user/signup", userController.register);
