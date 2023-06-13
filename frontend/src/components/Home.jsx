@@ -13,9 +13,9 @@ const Home = () => {
     // const userId = searchParams.get('userId');
     const { currentUser , logout } = useContext(AuthContext);
 
-    const emaill = currentUser.userData.email;
+    const emaill = currentUser.email;
     //const username = email.substring(0, email.indexOf('@'));
-    const username = currentUser.userData.name;
+    const username = currentUser.name;
     const getAge = () => {
         return Math.floor(Math.random() * 80) + 1; // Generates a random age between 1 and 80
       };
@@ -33,6 +33,7 @@ const Home = () => {
         const formattedNumber = `${randomNumber.substring(0, 3)}-${randomNumber.substring(3, 6)}-${randomNumber.substring(6)}`;
         return formattedNumber;
       };
+
 
       async function handleLogout() {
        await logout();
