@@ -13,9 +13,9 @@ const Home = () => {
     // const userId = searchParams.get('userId');
     const { currentUser , logout } = useContext(AuthContext);
 
-    const emaill = currentUser.email;
+    const emaill = currentUser.userData.email;
     //const username = email.substring(0, email.indexOf('@'));
-    const username = currentUser.name;
+    const username = currentUser.userData.name;
     const getAge = () => {
         return Math.floor(Math.random() * 80) + 1; // Generates a random age between 1 and 80
       };
