@@ -10,11 +10,11 @@ export const AuthContexProvider = ({ children }) => {
 
   const login = async (inputs) => {
     const res = await axios.post("https://myguvi-backend.onrender.com/api/user/login", inputs);
-    const userData = res.data;
-    setCurrentUser(userData);
+    //const userData = res.data;
+    setCurrentUser(res.data);
   };
 
-  
+
   const logout = async () => {
     await axios.post("https://myguvi-backend.onrender.com/api/user/logout");
     setCurrentUser(null);

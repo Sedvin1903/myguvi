@@ -137,7 +137,7 @@ const homer = (req, res) => {
   const email = User.email.toString() ;
 
   const response = {name,email};  */
-  
+
 //   async function run() {
 
 //   const
