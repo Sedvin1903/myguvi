@@ -106,6 +106,5 @@ const logout = (req, res) => {
     
 };
 
-
-module.exports = { register, loginUser, logout,homer };
+module.exports = { register, loginUser, logout };
 
