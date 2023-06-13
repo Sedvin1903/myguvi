@@ -3,7 +3,7 @@ import {useNavigate } from 'react-router-dom'
 import  './style.css';
 import { AuthContext } from "../auth/Authcontext";
 
-const Home = ({ }) => {
+const Home = () => {
     
     //const {name ,email} = currentUser;
     const history = useNavigate()
