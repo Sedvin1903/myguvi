@@ -49,9 +49,9 @@ const UserProfile = () => {
      history('/');
    };
 
-   async function handleEdit() {
-     history('/editlink');
-   };
+  //  async function handleEdit() {
+  //    history('/editlink');
+  //  };
 
  const project = getprojprogressBar();
  const designloc = getdesignationPlace(); 
@@ -67,7 +67,7 @@ const UserProfile = () => {
                 <li className="breadcrumb-item"><a href="/home">Home</a></li>
                 <li className="breadcrumb-item active" aria-current="page">User Profile</li>
                 {/* <button  onClick={handleLogout} style={{marginLeft : '60%'}}  className="btn btn-primary">Edit Link</button> */}
-                <button  onClick={handleEdit} style={{marginLeft : '80%'}}  className="btn btn-primary">Logout</button>
+                <button  onClick={handleLogout} style={{marginLeft : '80%'}}  className="btn btn-primary">Logout</button>
               </ol>
              
             </nav>
