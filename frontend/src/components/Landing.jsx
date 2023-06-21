@@ -19,7 +19,7 @@ return (
       </div>
       
       <div className="sbt">
-        <a className="btn btn-primary" href="/login" role="button">
+        <a className="btn btn-primary" href="login" role="button">
           Experience it !!
         </a>
       </div>

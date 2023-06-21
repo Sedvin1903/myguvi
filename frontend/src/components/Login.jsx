@@ -45,9 +45,9 @@ const validateEmail = () => {
 
         try{
               
-              await login(input)
-              alert('Logged In !!')
-              history('/home')
+              await login(input);
+              alert('Logged In !!');
+              history('/home');
               
           }
       catch(err)
@@ -88,14 +88,12 @@ const validateEmail = () => {
                     />
             </div>
           <br />
-          <input type="submit"class="btn btn-primary" onClick={hsubmit} disabled={!isInputValid} />
+          <input type="submit"className="btn btn-primary"  style={{marginLeft: '0%'}} onClick={hsubmit} disabled={!isInputValid} />
           {err && <p>{err}</p>}
             </form>
             <br />
             <p>-----OR-----</p>
             <br />
-<script>  
-</script>
             <Link to="/signup">New User? Create Account</Link>
 </center>
         </div>

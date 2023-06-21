@@ -1,19 +1,27 @@
 import React from 'react';
-import { useState } from "react";
-import axios from "axios";
+import {useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { AuthContext } from "../auth/Authcontext";
 import  './style.css';
+//import axios from "axios";
 
 
-const Signup = () => {
-   
-    const [inputs, setInputs] = useState({
-      name: "",
-      email: "",
-      password: "",
-      cpass: "",
+const EditHome = () => {
+    
+    const { currentUser , updateBio } = useContext(AuthContext);
+
+
+    const [bio, setInputs] = useState({
+      id: currentUser?.data?._id ,
+      name : "",
+      email : "",
+     age: "",
+     dob: "",
+     mobile: "",
     });
     const [err, setError] = useState(null);
+    
+
     const history = useNavigate();
 
     const handleChange = (e) => {
@@ -24,10 +32,10 @@ const Signup = () => {
         e.preventDefault();
 
         try{
-
-            await axios.post("https://myguvi-backend.onrender.com/api/user/signup",inputs);
-                   alert('User Successfully Registered')
-                    history('/login');
+ 
+            await updateBio(bio);
+            alert('Profile Successfully Updated !!')
+            history('/home');
         }
         catch(err){
             console.log(err);
@@ -39,11 +47,11 @@ const Signup = () => {
 
 
     return (
-        <div className="login">
+        <div className="edithome">
 
             <center>
             <br /><br />
-            <h1>Signup</h1>
+            <h1>Edit Profile <i className="fa-solid fa-user-pen"></i></h1>
             <br /><br />
             <form >
 
@@ -53,8 +61,9 @@ const Signup = () => {
             required
               type="text"
               className="form-group row"
-              placeholder="First name"
+              placeholder = "Name"
               name = "name"
+              //value={currentUser?.data?.name}
               onChange={handleChange}
             />
             </div>
@@ -67,38 +76,47 @@ const Signup = () => {
               placeholder="Email"
               name = "email"
               onChange={handleChange}
+              //value={currentUser?.data?.email}
             /></div>
           <div className="mb-3">
-                    <label>Password</label>
+                    <label>Age</label>
                     <input
                     required
-                    type="password"
+                    type="number"
                     className="form-group row"
-                    name = "password"
-                    placeholder="Password"
+                    name = "age"
+                    placeholder="Age"
                     onChange={handleChange}
                     />
                      </div>
           <div className="mb-3">
-                    <label>Confirm Password</label>
+                    <label>DOB</label>
                     <input
                     required
-                    type="password"
+                    type="text"
                     className="form-group row"
-                    name = "cpass"
-                    placeholder="Confirm Password"
+                    name = "dob"
+                    placeholder="DD-MM-YYYY"
+                    onChange={handleChange}
+                    />     </div>
+         <div className="mb-3">
+                    <label>Mobile No.</label>
+                    <input
+                    required
+                    type="text"
+                    className="form-group row"
+                    name = "mobile"
+                    placeholder="Enter 10 digits"
                     onChange={handleChange}
                     />     </div>
 
           <br /><br />
-                <input type="submit"class="btn btn-primary" onClick={hsubmit} />
+                <input type="submit"className="btn btn-primary" onClick={hsubmit} />
                 {err && <p>{err}</p>}
             </form>
             </center>
-            
-
         </div>
     );
 };
 
-export default Signup;
+export default EditHome;
