@@ -143,7 +143,7 @@ const editProfile = async (req, res) => {
               updateDoc,
               updateOptions,
             );
-    console.log(`Here is the updated document:\n${JSON.stringify(updateResult.value)}\n`);
+    console.log(`Here is the updated document:\n${JSON.stringify(duplicateUser.value)}\n`);
       getUser = await userproModel.findOne({ id });
     }
     res.status(201).send({ data: getUser });
