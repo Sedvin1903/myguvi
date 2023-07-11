@@ -125,7 +125,7 @@ const editProfile = async (req, res) => {
     }
 
     const id = Body.id
-    let duplicateUser = await userproModel.findOne({ id });
+    let duplicateUser = await userproModel.findOne({ id :id });
     let getUser ;
     if( !duplicateUser )
     {  
