@@ -15,7 +15,6 @@ export const AuthContexProvider = ({ children }) => {
     setCurrentUser(userData);
   };
 
-
   const updateBio = async (bio) => {
     const res = await axios.post("https://myguvi-backend.onrender.com/api/user/bio",bio);
     const userbio = res.data;

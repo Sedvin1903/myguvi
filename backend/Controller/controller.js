@@ -33,7 +33,6 @@ const register = async (req, res) => {
     }
     
    
-
     //==================> password validation <=======================
     if (!Body.password) {
       return res.status(400).json("Please enter password");
